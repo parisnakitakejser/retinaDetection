@@ -6,6 +6,7 @@
  * http://parisnakitakejser.com
  *
  * Date: 2013-10-23
+ * Version: 1.0.3.1
  */
 $.retinaDetection = 
 {
@@ -34,10 +35,9 @@ $.retinaDetection =
 		$('img[data-res="1"]').each(function () 
 		{
 			var file_ext=/[^.]+$/.exec( $(this).attr('src') );
+			$(this).attr('style', 'height:'+ $(this).height() +'px; width: '+ $(this).width() +'px;');
 			
 			$(this).attr('src', $.retinaDetection._getFilename( $(this).attr('src'), '.'+ file_ext) + imageRes +'.'+ file_ext );
-			
-			// $(this).attr('src', $(this).attr('src') );
 		});
 	}
 };
